@@ -23,7 +23,7 @@ void mergeSort(int arr[], int l, int mid, int r)
     }
     while(i <= mid)
     {
-        temp[k++] = arr[l++];
+        temp[k++] = arr[i++];
     }
     while(j <= r)
     {
@@ -36,11 +36,42 @@ void mergeSort(int arr[], int l, int mid, int r)
         arr[i] = temp[k++];
     }
 }
+void Sort(int arr[], int n)
+{
+    int p;
+    for(p = 2; p <= n; p *= 2)
+    {
+        for(int i = 0; i+p-1 < n; i += p)
+        {
+            int l = i;
+            int r = i+p-1;
+            int mid = (l+r) / 2;
+
+            mergeSort(arr, l, mid, r);
+        }
+    }
+    if(p/2 < n)
+    {
+        mergeSort(arr, 0, p/2 - 1, n-1);
+    }
+}
+
+void recursiveSort(int arr, int l, int r)
+{
+    if(l < r)
+    {
+        int mid = (l+r)/2;
+
+        recursiveSort(arr, l, mid);
+        recursiveSort(arr, mid+1, r);
+        mergeSort(arr, l, mid, r);
+    }
+}
 
 int main()
 {
     cout<<"Enter array size: "<<endl;
-    int n,l,r,mid;
+    int n;
     cin>>n;
     int arr[n];
 
@@ -51,14 +82,9 @@ int main()
         cin>>arr[i];
     }
 
-    cout<<"Enter the value of Left index: ";
-    cin>>l;
-    cout<<"Enter the value of Right index: ";
-    cin>>r;
-    cout<<"Enter the value of Mid index: ";
-    cin>>mid;
-
-    mergeSort(arr,l,mid,r);
+    //mergeSort(arr,l,mid,r);
+    //Sort(arr, n);
+    recursiveSort(arr,0,5);
 
     cout<<"Sorted array: "<<endl;
 
