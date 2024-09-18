@@ -1,6 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+Time complexity:
+Best case -> O(n)
+Worst case -> O(n^2)
+*/
+
 void bubbleSort(int arr[], int n)
 {
     for(int i=0; i<n-1; i++)
