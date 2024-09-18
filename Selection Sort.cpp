@@ -1,6 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+    Time complexity:
+    Best case -> O(n^2)
+    Worst case -> O(n^2)
+    Not stable, In-place, not adaptive sorting algorithm & perform minimum number of swap.
+*/
+
 void selectionSort(int arr[], int n)
 {
     for(int pass=0; pass<n-1; pass++)
@@ -17,6 +24,7 @@ void selectionSort(int arr[], int n)
         int temp = arr[pass];
         arr[pass] = arr[smallest_idx];
         arr[smallest_idx] = temp;
+
     }
 
 }
