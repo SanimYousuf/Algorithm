@@ -1,6 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+Time complexity:
+Best case -> O(n)
+Worst case -> O(n^2)
+
+Adaptive, Stable & In-place sorting alogrithm
+*/
+
 insertionSort(int arr[], int n)
 {
     for(int pass=0; pass<n; pass++)

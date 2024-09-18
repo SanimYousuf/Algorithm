@@ -5,6 +5,8 @@ using namespace std;
 Time complexity:
 Best case -> O(n)
 Worst case -> O(n^2)
+
+Adaptive, Stable & In-place sorting alogrithm
 */
 
 void bubbleSort(int arr[], int n)
